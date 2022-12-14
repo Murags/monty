@@ -83,3 +83,31 @@ void sub(stack_t **stack, unsigned int line_number)
         }
 
 }
+void _div(stack_t **stack, unsigned int line_number)
+{
+	int count = 0, temp;
+	stack_t *curr = *stack;
+
+	if (curr)
+	{
+		while (curr)
+		{
+			curr = curr->next;
+			count++;
+		}
+		if (count < 2)
+		{
+			fprintf(stderr, "L%u: can't div, stack too short\n", line_number);
+			exit(EXIT_FAILURE);
+		}
+		temp = (*stack)->n;
+		pop(stack, line_number);
+		(*stack)->n = (*stack)->n / temp;
+        }
+        else
+        {
+                fprintf(stderr, "L%u: can't div, stack too short\n", line_number);
+                exit(EXIT_FAILURE);
+        }
+
+}
