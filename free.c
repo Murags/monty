@@ -2,12 +2,11 @@
 
 void _free(stack_t **stack)
 {
-	stack_t *tmp;
+	stack_t *current = *stack;
 
-	while ((*stack))
+	for (; current; current = *stack)
 	{
-		tmp = (*stack)->next;
-		free(*stack);
-		(*stack) = tmp;
+		*stack = (*stack)->next;
+		free(current);
 	}
 }
