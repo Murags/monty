@@ -12,6 +12,7 @@ void exec_cmd(char **command, unsigned int line_number, stack_t **head)
 	instruction_t selector[] = {
 			{"push", push},
 			{"pall", pall},
+			{"pint", pint},
 			{NULL, NULL}
 		};
 	if (_strcmp(command[0], "push") == 0)
