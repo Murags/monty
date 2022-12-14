@@ -29,6 +29,8 @@ int main(int argc, char **argv)
 	while (fgets(line, 1024, f) != NULL)
 	{
 		command = parser(line);
+		if (_strcmp(command[0], "#") == 0)
+			continue;
 		if (check_line(command) == -1)
 		{
 			fprintf(stderr, "L%u: unknown instruction %s\n", line_number, command[0]);
