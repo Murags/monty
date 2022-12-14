@@ -21,6 +21,7 @@ void exec_cmd(char **command, unsigned int line_number, stack_t **head)
 			{"div", _div},
 			{"mul", mul},
 			{"mod", mod},
+			{"pchar", pchar},
 			{NULL, NULL}
 		};
 	if (_strcmp(command[0], "push") == 0)

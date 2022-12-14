@@ -49,6 +49,7 @@ void _div(stack_t **stack, unsigned int linenumber);
 void mul(stack_t **stack, unsigned int linenumber);
 void mod(stack_t **stack, unsigned int linenumber);
 void _free(stack_t **stack);
+void pchar(stack_t **stack, unsigned int linenumber);
 
 int _strcmp(char *s1, char *s2);
 int len(char **c);

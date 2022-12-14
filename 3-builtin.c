@@ -35,3 +35,20 @@ void mod(stack_t **stack, unsigned int line_number)
                 exit(EXIT_FAILURE);
         }
 }
+void pchar(stack_t **stack, unsigned int line_number)
+{
+	if (*stack)
+	{
+		if ((*stack)->n > 127 || (*stack)->n < 0)
+		{
+			fprintf(stderr, "L%u: can't pchar, value out of range\n", line_number);
+			exit(EXIT_FAILURE);
+		}
+		printf("%c\n", (char)((*stack)->n));
+	}
+	else
+	{
+		fprintf(stderr, "L%u: can't pchar, stack empty\n", line_number);
+		exit(EXIT_FAILURE);
+	}
+}
