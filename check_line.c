@@ -1,4 +1,4 @@
-#include "main.h"
+#include "monty.h"
 /**
 *check_line - checks if command exist
 *

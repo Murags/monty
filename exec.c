@@ -1,4 +1,4 @@
-#include "main.h"
+#include "monty.h"
 /**
 *exec_cmd - calls the correct function to execute
 *
