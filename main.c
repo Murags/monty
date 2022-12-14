@@ -65,7 +65,7 @@ char **parser(char *buffer)
 	while (token)
 	{
 		cmd[i++] = token;
-		token = strtok(NULL, " \n");
+		token = strtok(NULL, " \t\r\n");
 	}
 	cmd[i] = NULL;
 	return (cmd);
