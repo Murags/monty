@@ -14,7 +14,7 @@ void exec_cmd(char **command, unsigned int line_number, stack_t **head)
 			{"pall", pall},
 			{NULL, NULL}
 		};
-	if (strcmp(command[0], "push") == 0)
+	if (_strcmp(command[0], "push") == 0)
 	{
 		if (len(command) == 2)
 		{
@@ -35,7 +35,7 @@ void exec_cmd(char **command, unsigned int line_number, stack_t **head)
 
 	while ((selector + i)->opcode)
 	{
-		if (strcmp((selector + i)->opcode, command[0]) == 0)
+		if (_strcmp((selector + i)->opcode, command[0]) == 0)
 		{
 			(selector + i)->f(head, line_number);
 			return;

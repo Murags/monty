@@ -13,7 +13,7 @@ int check_line(char **command)
 
 	while (array[i])
 	{
-		if (strcmp(array[i], command[0]) == 0)
+		if (_strcmp(array[i], command[0]) == 0)
 			return (0);
 		i++;
 	}
