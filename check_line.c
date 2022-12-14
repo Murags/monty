@@ -9,7 +9,7 @@
 int check_line(char **command)
 {
 	int i = 0;
-	char *array[] = {"push", "pall", "pint", "pop", "nop", NULL};
+	char *array[] = {"push", "pall", "pint", "pop", "nop", "swap", NULL};
 
 	while (array[i])
 	{

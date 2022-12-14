@@ -15,6 +15,7 @@ void exec_cmd(char **command, unsigned int line_number, stack_t **head)
 			{"pint", pint},
 			{"pop", pop},
 			{"nop", nop},
+			{"swap", swap},
 			{NULL, NULL}
 		};
 	if (_strcmp(command[0], "push") == 0)
