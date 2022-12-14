@@ -43,7 +43,7 @@ void pint(stack_t **stack, unsigned int line_number);
 void pop(stack_t **stack, unsigned int line_number);
 void nop(stack_t **stack, unsigned int linenumber);
 void swap(stack_t **stack, unsigned int linenumber);
-
+void add(stack_t **stack, unsigned int linenumber);
 
 int _strcmp(char *s1, char *s2);
 int len(char **c);
