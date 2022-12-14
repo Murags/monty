@@ -47,6 +47,7 @@ void add(stack_t **stack, unsigned int linenumber);
 void sub(stack_t **stack, unsigned int linenumber);
 void _div(stack_t **stack, unsigned int linenumber);
 void mul(stack_t **stack, unsigned int linenumber);
+void mod(stack_t **stack, unsigned int linenumber);
 
 int _strcmp(char *s1, char *s2);
 int len(char **c);
