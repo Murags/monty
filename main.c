@@ -56,7 +56,7 @@ char **parser(char *buffer)
 	if (buffer == NULL)
 		return (NULL);
 
-	token = strtok(buffer, " \n");
+	token = strtok(buffer, " \t\n");
 	if (token == NULL)
 		return (NULL);
 
