@@ -28,8 +28,7 @@ int main(int argc, char **argv)
 	}
 	if (fgetc(f) == EOF)
 	{
-		fprintf(stderr, "Error: %s file empty\n",argv[1]);
-		exit(EXIT_FAILURE);
+		return (0);
 	}
 	while (fgets(line, 1024, f) != NULL)
 	{
