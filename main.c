@@ -26,7 +26,11 @@ int main(int argc, char **argv)
 		fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
 		exit(EXIT_FAILURE);
 	}
-
+	if (fgetc(f) == EOF)
+	{
+		fprintf(stderr, "Error: %s file empty\n",argv[1]);
+		exit(EXIT_FAILURE);
+	}
 	while (fgets(line, 1024, f) != NULL)
 	{
 		command = parser(line);
