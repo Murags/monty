@@ -26,10 +26,6 @@ int main(int argc, char **argv)
 		fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
 		exit(EXIT_FAILURE);
 	}
-	if (fgetc(f) == EOF)
-	{
-		return (0);
-	}
 	while (fgets(line, 1024, f) != NULL)
 	{
 		command = parser(line);
@@ -59,7 +55,7 @@ char **parser(char *buffer)
 	if (buffer == NULL)
 		return (NULL);
 
-	token = strtok(buffer, " \t\n");
+	token = strtok(buffer, " \t\n\r");
 	if (token == NULL)
 		return (NULL);
 
