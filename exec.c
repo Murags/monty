@@ -19,6 +19,7 @@ void exec_cmd(char **command, unsigned int line_number, stack_t **head)
 			{"add", add},
 			{"sub", sub},
 			{"div", _div},
+			{"mul", mul},
 			{NULL, NULL}
 		};
 	if (_strcmp(command[0], "push") == 0)
