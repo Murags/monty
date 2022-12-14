@@ -44,6 +44,12 @@ void pall(stack_t **stack, unsigned int line_number)
 		current = current->next;
 	}
 }
+/**
+*pint - prints top element on stack
+*
+*@stack: pointer to list
+*@line_number: line no
+*/
 void pint(stack_t **stack, unsigned int line_number)
 {
 	if (*stack)
@@ -53,4 +59,21 @@ void pint(stack_t **stack, unsigned int line_number)
 		fprintf(stderr, "L%u: can't pint, stack empty\n", line_number);
 		exit(EXIT_FAILURE);
 	}
+}
+void pop(stack_t **stack, unsigned int line_number)
+{
+	stack_t *curr = *stack;
+
+	if (!curr)
+	{
+		fprintf(stderr, "L%u: can't pop an empty stack\n", line_number);
+		exit(EXIT_FAILURE);
+	}
+	else
+	{
+		*stack = curr->next;
+		if (*stack)
+			(*stack)->prev = NULL;
+	}
+	free(curr);
 }

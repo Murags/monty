@@ -40,6 +40,7 @@ extern int element;
 void pall(stack_t **stack, unsigned int line_number);
 void push(stack_t **stack, unsigned int line_number);
 void pint(stack_t **stack, unsigned int line_number);
+void pop(stack_t **stack, unsigned int line_number);
 
 int _strcmp(char *s1, char *s2);
 int len(char **c);
