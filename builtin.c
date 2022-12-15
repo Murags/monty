@@ -14,7 +14,11 @@ void push(stack_t **stack, unsigned int line_number)
 	new = malloc(sizeof(stack_t));
 
 	if (new == NULL)
-		return;
+	{
+		fprintf(stderr,"Error: malloc failed");
+		clear(stack);
+		exit(EXIT_FAILURE);
+	}
 
 	new->n = global.element;
 	new->prev = NULL;
@@ -56,8 +60,7 @@ void pint(stack_t **stack, unsigned int line_number)
 	else
 	{
 		fprintf(stderr, "L%u: can't pint, stack empty\n", line_number);
-		_free(stack);
-		fclose(global.fd);
+		clear(stack);
 		exit(EXIT_FAILURE);
 	}
 }
@@ -74,6 +77,7 @@ void pop(stack_t **stack, unsigned int line_number)
 	if (!curr)
 	{
 		fprintf(stderr, "L%u: can't pop an empty stack\n", line_number);
+		clear(stack);
 		exit(EXIT_FAILURE);
 	}
 	else

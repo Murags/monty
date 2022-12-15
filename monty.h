@@ -69,6 +69,8 @@ void pstr(stack_t **stack, unsigned int line_number);
 void rotl(stack_t **stack, unsigned int linenumber);
 void rotr(stack_t **stack, unsigned int line_number);
 
+void clear(stack_t **stack);
+
 int _strcmp(char *s1, char *s2);
 int len(char **c);
 int _isdigit(char *c);

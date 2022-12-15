@@ -14,3 +14,13 @@ void _free(stack_t **stack)
 		free(current);
 	}
 }
+/**
+*clear - frees list and closes file
+*
+*@stack: pointer to list
+*/
+void clear(stack_t **stack)
+{
+	_free(stack);
+	fclose(global.fd);
+}

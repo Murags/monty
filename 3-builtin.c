@@ -20,13 +20,13 @@ void mod(stack_t **stack, unsigned int line_number)
 		if (count < 2)
 		{
 			fprintf(stderr, "L%u: can't mod, stack too short\n", line_number);
-			_free(stack);
+			clear(stack);
 			exit(EXIT_FAILURE);
 		}
 		if ((*stack)->n == 0)
 		{
 			fprintf(stderr, "L%u: division by zero\n", line_number);
-			_free(stack);
+			clear(stack);
 			exit(EXIT_FAILURE);
 		}
 		temp = (*stack)->n;
@@ -36,7 +36,7 @@ void mod(stack_t **stack, unsigned int line_number)
 	else
 	{
 		fprintf(stderr, "L%u: can't mod, stack too short\n", line_number);
-		_free(stack);
+		clear(stack);
 		exit(EXIT_FAILURE);
 	}
 }
@@ -53,6 +53,7 @@ void pchar(stack_t **stack, unsigned int line_number)
 		if ((*stack)->n > 127 || (*stack)->n < 0)
 		{
 			fprintf(stderr, "L%u: can't pchar, value out of range\n", line_number);
+			clear(stack);
 			exit(EXIT_FAILURE);
 		}
 		putchar((*stack)->n);
@@ -61,6 +62,7 @@ void pchar(stack_t **stack, unsigned int line_number)
 	else
 	{
 		fprintf(stderr, "L%u: can't pchar, stack empty\n", line_number);
+		clear(stack);
 		exit(EXIT_FAILURE);
 	}
 }

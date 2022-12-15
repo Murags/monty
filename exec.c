@@ -28,12 +28,14 @@ void exec_cmd(char **command, unsigned int line_number, stack_t **head)
 			else
 			{
 				fprintf(stderr, "L%u: usage: push integer\n", line_number);
+				clear(head);
 				exit(EXIT_FAILURE);
 			}
 		}
 		else
 		{
 			fprintf(stderr, "L%u: usage: push integer\n", line_number);
+			clear(head);
 			exit(EXIT_FAILURE);
 		}
 	}
