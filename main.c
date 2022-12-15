@@ -13,8 +13,8 @@ glob_t global;
 int main(int argc, char **argv)
 {
 	FILE *f;
-	char line[1024];
-	char **command;
+	char *line, **command;
+	size_t buffersize = 0;
 	unsigned int line_number = 1;
 	stack_t *head = NULL;
 
@@ -30,7 +30,7 @@ int main(int argc, char **argv)
 		fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
 		exit(EXIT_FAILURE);
 	}
-	while (fgets(line, 1024, f) != NULL)
+	while (getline(&line, &buffersize, f) != -1)
 	{
 		global.line = line;
 		command = parser(line);
