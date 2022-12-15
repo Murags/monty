@@ -39,7 +39,6 @@ void exec_cmd(char **command, unsigned int line_number, stack_t **head)
 			exit(EXIT_FAILURE);
 		}
 	}
-
 	while ((selector + i)->opcode)
 	{
 		if (_strcmp((selector + i)->opcode, command[0]) == 0)
