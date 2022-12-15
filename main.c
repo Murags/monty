@@ -34,6 +34,8 @@ int main(int argc, char **argv)
 	{
 		global.line = line;
 		command = parser(line);
+		if (command == NULL)
+			continue;
 		if (_strcmp(command[0], "#") == 0)
 			continue;
 		if (check_line(command) == -1)
@@ -70,6 +72,7 @@ char **parser(char *buffer)
 
 	cmd = malloc(sizeof(char *) * 1024);
 
+	
 	i = 0;
 	while (token)
 	{
