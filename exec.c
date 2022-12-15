@@ -24,6 +24,7 @@ void exec_cmd(char **command, unsigned int line_number, stack_t **head)
 			{"pchar", pchar},
 			{"pstr", pstr},
 			{"rotl", rotl},
+			{"rotr", rotr},
 			{NULL, NULL}
 		};
 	if (_strcmp(command[0], "push") == 0)
