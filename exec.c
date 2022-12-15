@@ -23,6 +23,7 @@ void exec_cmd(char **command, unsigned int line_number, stack_t **head)
 			{"mod", mod},
 			{"pchar", pchar},
 			{"pstr", pstr},
+			{"rotl", rotl},
 			{NULL, NULL}
 		};
 	if (_strcmp(command[0], "push") == 0)
