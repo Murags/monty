@@ -1,6 +1,6 @@
 #include "monty.h"
 
-int element;
+/*global_t global;*/
 /**
 *push - adds element to the stack
 *
@@ -17,7 +17,7 @@ void push(stack_t **stack, unsigned int line_number)
 	if (new == NULL)
 		return;
 
-	new->n = element;
+	new->n = global.element;
 	new->prev = NULL;
 	new->next = *stack;
 	*stack = new;
@@ -57,6 +57,8 @@ void pint(stack_t **stack, unsigned int line_number)
 	else
 	{
 		fprintf(stderr, "L%u: can't pint, stack empty\n", line_number);
+		_free(stack);
+		fclose(global.fd);
 		exit(EXIT_FAILURE);
 	}
 }

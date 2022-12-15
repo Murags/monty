@@ -1,4 +1,5 @@
 #include "monty.h"
+/*global_t global;*/
 /**
 *exec_cmd - calls the correct function to execute
 *
@@ -32,7 +33,7 @@ void exec_cmd(char **command, unsigned int line_number, stack_t **head)
 		if (len(command) == 2)
 		{
 			if (_isdigit(command[1]) == 1)
-				element = atoi(command[1]);
+				global.element = atoi(command[1]);
 			else
 			{
 				fprintf(stderr, "L%u: usage: push integer\n", line_number);

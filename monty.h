@@ -35,7 +35,21 @@ typedef struct instruction_s
         void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
-extern int element;
+/**
+ * struct glob_s - global and its funcs
+ * @fd: File descriptor
+ * @line: Line to getline
+ *
+ * Description: To handle the file and getline
+ */
+typedef struct glob_s
+{
+	FILE *fd;
+	char *line;
+	int element;
+} glob_t;
+
+extern glob_t global;
 
 void pall(stack_t **stack, unsigned int line_number);
 void push(stack_t **stack, unsigned int line_number);

@@ -1,4 +1,7 @@
 #include "monty.h"
+
+glob_t global;
+
 /**
 *main - entry of the program
 *
@@ -21,6 +24,7 @@ int main(int argc, char **argv)
 		exit(EXIT_FAILURE);
 	}
 	f = fopen(argv[1], "r");
+	global.fd = f;
 	if (f == NULL)
 	{
 		fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
@@ -28,6 +32,7 @@ int main(int argc, char **argv)
 	}
 	while (fgets(line, 1024, f) != NULL)
 	{
+		global.line = line;
 		command = parser(line);
 		if (_strcmp(command[0], "#") == 0)
 			continue;
@@ -39,6 +44,8 @@ int main(int argc, char **argv)
 		exec_cmd(command, line_number, &head);
 		line_number++;
 	}
+	free(command);
+	_free(&head);
 	fclose(f);
 	return (0);
 }
