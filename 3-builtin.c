@@ -1,5 +1,10 @@
 #include "monty.h"
-
+/**
+*mod - gets modulus of top two element
+*
+*@stack: pointer to list
+*@line_number: line no being executed
+*/
 void mod(stack_t **stack, unsigned int line_number)
 {
 	int count = 0, temp;
@@ -27,14 +32,20 @@ void mod(stack_t **stack, unsigned int line_number)
 		temp = (*stack)->n;
 		pop(stack, line_number);
 		(*stack)->n = (*stack)->n % temp;
-        }
-        else
-        {
-                fprintf(stderr, "L%u: can't mod, stack too short\n", line_number);
+	}
+	else
+	{
+		fprintf(stderr, "L%u: can't mod, stack too short\n", line_number);
 		_free(stack);
-                exit(EXIT_FAILURE);
-        }
+		exit(EXIT_FAILURE);
+	}
 }
+/**
+*pchar - prints ascii value of top element
+*
+*@stack: pointer to list
+*@line_number: line no being executed
+*/
 void pchar(stack_t **stack, unsigned int line_number)
 {
 	if (*stack && stack)
@@ -53,6 +64,12 @@ void pchar(stack_t **stack, unsigned int line_number)
 		exit(EXIT_FAILURE);
 	}
 }
+/**
+*pstr - prints string formed by list
+*
+*@stack: pointer to list
+*@line_number: line no being executed
+*/
 void pstr(stack_t **stack, unsigned int line_number)
 {
 	stack_t *current = *stack;
@@ -68,6 +85,12 @@ void pstr(stack_t **stack, unsigned int line_number)
 	}
 	putchar('\n');
 }
+/**
+*rotl - moves top element to the bottom
+*
+*@stack: pointer to list
+*@line_number: line no being executed
+*/
 void rotl(stack_t **stack, unsigned int line_number)
 {
 	stack_t *current, *new;
@@ -89,6 +112,12 @@ void rotl(stack_t **stack, unsigned int line_number)
 		new->next = NULL;
 	}
 }
+/**
+*rotr - moves bottom element to the top
+*
+*@stack: pointer to list
+*@line_number: line no being executed
+*/
 void rotr(stack_t **stack, unsigned int line_number)
 {
 	stack_t *current = *stack;

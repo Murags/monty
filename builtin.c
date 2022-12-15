@@ -1,6 +1,5 @@
 #include "monty.h"
 
-/*global_t global;*/
 /**
 *push - adds element to the stack
 *
@@ -62,6 +61,12 @@ void pint(stack_t **stack, unsigned int line_number)
 		exit(EXIT_FAILURE);
 	}
 }
+/**
+*pop - removes top element
+*
+*@stack: pointer to list
+*@line_number: line no being executed
+*/
 void pop(stack_t **stack, unsigned int line_number)
 {
 	stack_t *curr = *stack;
@@ -79,6 +84,12 @@ void pop(stack_t **stack, unsigned int line_number)
 	}
 	free(curr);
 }
+/**
+*nop - does nothing
+*
+*@stack: pointer to list
+*@line_number: line no being executed
+*/
 void nop(stack_t **stack, unsigned int line_number)
 {
 	(void)stack;

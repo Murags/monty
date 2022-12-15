@@ -72,7 +72,6 @@ char **parser(char *buffer)
 
 	cmd = malloc(sizeof(char *) * 1024);
 
-	
 	i = 0;
 	while (token)
 	{

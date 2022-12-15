@@ -1,5 +1,4 @@
 #include "monty.h"
-/*global_t global;*/
 /**
 *exec_cmd - calls the correct function to execute
 *
@@ -11,22 +10,14 @@ void exec_cmd(char **command, unsigned int line_number, stack_t **head)
 {
 	int i = 0;
 	instruction_t selector[] = {
-			{"push", push},
-			{"pall", pall},
-			{"pint", pint},
-			{"pop", pop},
-			{"nop", nop},
-			{"swap", swap},
-			{"add", add},
-			{"sub", sub},
-			{"div", _div},
-			{"mul", mul},
-			{"mod", mod},
-			{"pchar", pchar},
-			{"pstr", pstr},
-			{"rotl", rotl},
-			{"rotr", rotr},
-			{NULL, NULL}
+			{"push", push}, {"pall", pall},
+			{"pint", pint}, {"pop", pop},
+			{"nop", nop}, {"swap", swap},
+			{"add", add}, {"sub", sub},
+			{"div", _div}, {"mul", mul},
+			{"mod", mod}, {"pchar", pchar},
+			{"pstr", pstr}, {"rotl", rotl},
+			{"rotr", rotr}, {NULL, NULL}
 		};
 	if (_strcmp(command[0], "push") == 0)
 	{

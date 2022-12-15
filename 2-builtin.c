@@ -1,5 +1,10 @@
 #include "monty.h"
-
+/**
+*swap - swaps top two elements
+*
+*@stack: pointer to list
+*@line_number: line no being executed
+*/
 void swap(stack_t **stack, unsigned int line_number)
 {
 	int count = 0, temp;
@@ -27,9 +32,15 @@ void swap(stack_t **stack, unsigned int line_number)
 		exit(EXIT_FAILURE);
 	}
 }
+/**
+*add - adds top two elements
+*
+*@stack: pointer to list
+*@line_number: line no being executed
+*/
 void add(stack_t **stack, unsigned int line_number)
 {
-	/*int count = 0, temp;
+	int count = 0, temp;
 	stack_t *curr = *stack;
 
 	if (curr)
@@ -47,24 +58,19 @@ void add(stack_t **stack, unsigned int line_number)
 		temp = (*stack)->n;
 		pop(stack, line_number);
 		(*stack)->n = temp + (*stack)->n;
-        }
-        else
-        {
-                fprintf(stderr, "L%u: can't add, stack too short\n", line_number);
-                exit(EXIT_FAILURE);
-        }*/
-    if (*stack && (*stack)->next)
-    {
-        (*stack)->next->n += (*stack)->n;
-        pop(stack, line_number);
-    }
-    else
-    {
-        fprintf(stderr, "L%u: can't add, stack too short\n", line_number);
-	exit(EXIT_FAILURE);
-    }
-
+	}
+	else
+	{
+		fprintf(stderr, "L%u: can't add, stack too short\n", line_number);
+		exit(EXIT_FAILURE);
+	}
 }
+/**
+*sub - subtracts top two element
+*
+*@stack: pointer to list
+*@line_number: line no being executed
+*/
 void sub(stack_t **stack, unsigned int line_number)
 {
 	int count = 0, temp;
@@ -85,14 +91,19 @@ void sub(stack_t **stack, unsigned int line_number)
 		temp = (*stack)->n;
 		pop(stack, line_number);
 		(*stack)->n = (*stack)->n - temp;
-        }
-        else
-        {
-                fprintf(stderr, "L%u: can't sub, stack too short\n", line_number);
-                exit(EXIT_FAILURE);
-        }
-
+	}
+	else
+	{
+		fprintf(stderr, "L%u: can't sub, stack too short\n", line_number);
+		exit(EXIT_FAILURE);
+	}
 }
+/**
+*_div - divides top two element
+*
+*@stack: pointer to list
+*@line_number: line no being executed
+*/
 void _div(stack_t **stack, unsigned int line_number)
 {
 	int count = 0, temp;
@@ -118,14 +129,19 @@ void _div(stack_t **stack, unsigned int line_number)
 		temp = (*stack)->n;
 		pop(stack, line_number);
 		(*stack)->n = (*stack)->n / temp;
-        }
-        else
-        {
-                fprintf(stderr, "L%u: can't div, stack too short\n", line_number);
-                exit(EXIT_FAILURE);
-        }
-
+	}
+	else
+	{
+		fprintf(stderr, "L%u: can't div, stack too short\n", line_number);
+		exit(EXIT_FAILURE);
+	}
 }
+/**
+*mul - multiplies top two element
+*
+*@stack: pointer to list
+*@line_number: line no being executed
+*/
 void mul(stack_t **stack, unsigned int line_number)
 {
 	int count = 0, temp;
@@ -146,11 +162,10 @@ void mul(stack_t **stack, unsigned int line_number)
 		temp = (*stack)->n;
 		pop(stack, line_number);
 		(*stack)->n = temp * (*stack)->n;
-        }
-        else
-        {
-                fprintf(stderr, "L%u: can't mul, stack too short\n", line_number);
-                exit(EXIT_FAILURE);
-        }
-
+	}
+	else
+	{
+		fprintf(stderr, "L%u: can't mul, stack too short\n", line_number);
+		exit(EXIT_FAILURE);
+	}
 }
